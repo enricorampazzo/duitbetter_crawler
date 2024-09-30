@@ -6,6 +6,7 @@ import org.springframework.data.neo4j.core.schema.Property;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
 import java.util.List;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,6 +16,9 @@ import java.util.List;
 public class WebPageNode {
 
     @Id
+    @Generated
+    private UUID id;
+    @Property
     private String url;
     @Property
     private String title;
@@ -22,5 +26,5 @@ public class WebPageNode {
     private String text;
     @EqualsAndHashCode.Exclude
     @Relationship(type="LINKS_TO", direction = Relationship.Direction.OUTGOING)
-    private List<String> links;
+    private List<WebPageNode> links;
 }
