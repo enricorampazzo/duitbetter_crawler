@@ -24,6 +24,8 @@ public class WebPageNode {
     private String title;
     @Property
     private String text;
+    @Property
+    private boolean cleanedHtml;
     @EqualsAndHashCode.Exclude
     @Relationship(type="LINKS_TO", direction = Relationship.Direction.OUTGOING)
     private List<WebPageNode> links;
