@@ -1,6 +1,6 @@
 services:
   neo4j:
-    image: neo4j:5.23.0
+    image: neo4j:5.24
     environment:
       - NEO4J_AUTH=${NEO4J_AUTH}
     ports:
